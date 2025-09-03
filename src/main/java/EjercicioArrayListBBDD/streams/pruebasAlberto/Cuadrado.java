@@ -23,7 +23,7 @@ public class Cuadrado {
         };
         Cuadrado cuadradoStandard = new Cuadrado(20, 40);
 
-        CalcularAreaCuadrado cuadradoL = ((ancho1, largo1) -> new Cuadrado(ancho1, largo1));
+        CalcularAreaCuadrado cuadrado1 = ((ancho1, largo1) -> new Cuadrado(ancho1, largo1));
 
         Cuadrado cuadradoLambda = new Cuadrado(40, 80);
         System.out.println("El área del cuadrado standard es de: " + areaCuadrado(cuadradoStandard));
