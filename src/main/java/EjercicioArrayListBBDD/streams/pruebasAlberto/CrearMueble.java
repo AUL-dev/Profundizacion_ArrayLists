@@ -5,6 +5,6 @@ import EjercicioArrayListBBDD.streams.pruebasIsam.Pastel;
 @FunctionalInterface
 public interface CrearMueble {
 
-    Mueble crearmueble  (int anchura, int largura);
+    Mueble crearMueble  (int anchura, int largura);
 
 }
