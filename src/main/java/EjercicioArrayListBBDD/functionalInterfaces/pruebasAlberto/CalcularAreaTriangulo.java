@@ -1,4 +1,4 @@
-package EjercicioArrayListBBDD.streams.pruebasAlberto;
+package EjercicioArrayListBBDD.functionalInterfaces.pruebasAlberto;
 
 @FunctionalInterface
 public interface CalcularAreaTriangulo {

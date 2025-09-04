@@ -1,4 +1,4 @@
-package EjercicioArrayListBBDD.streams.pruebasIsam;
+package EjercicioArrayListBBDD.functionalInterfaces.pruebasIsam;
 
 import EjercicioArrayListBBDD.devolverIdiomasPaises.EntityCountryLanguage;
 import EjercicioArrayListBBDD.devolverIdiomasPaises.Main;

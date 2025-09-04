@@ -1,4 +1,4 @@
-package EjercicioArrayListBBDD.streams.pruebasAlberto;
+package EjercicioArrayListBBDD.functionalInterfaces.pruebasAlberto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

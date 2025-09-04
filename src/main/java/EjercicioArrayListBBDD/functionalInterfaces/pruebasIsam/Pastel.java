@@ -1,4 +1,4 @@
-package EjercicioArrayListBBDD.streams.pruebasIsam;
+package EjercicioArrayListBBDD.functionalInterfaces.pruebasIsam;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

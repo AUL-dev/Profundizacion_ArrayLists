@@ -1,4 +1,4 @@
-package EjercicioArrayListBBDD.streams.pruebasAlberto;
+package EjercicioArrayListBBDD.functionalInterfaces.pruebasAlberto;
 
 public class LongitudString {
     public static void main(String[] args) {
