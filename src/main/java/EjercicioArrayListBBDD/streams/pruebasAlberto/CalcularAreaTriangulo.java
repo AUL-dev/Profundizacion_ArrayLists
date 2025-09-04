@@ -1,5 +1,6 @@
 package EjercicioArrayListBBDD.streams.pruebasAlberto;
 
+@FunctionalInterface
 public interface CalcularAreaTriangulo {
-    Triangulo calcularAreaTriangulo(int base, int altura);
+    int calcularAreaTriangulo(int base, int altura);
 }

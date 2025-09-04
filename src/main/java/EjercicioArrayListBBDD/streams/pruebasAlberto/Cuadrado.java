@@ -14,16 +14,16 @@ public class Cuadrado {
     public static void main(String[] args) {
         CalcularAreaCuadrado cuadrado = new CalcularAreaCuadrado() {
             @Override
-            public Cuadrado calcularAreaCuadrado(int ancho, int largo) {
-                Cuadrado cuadrado2 = new Cuadrado();
-                cuadrado2.setAncho(ancho);
-                cuadrado2.setLargo(largo);
-                return cuadrado2;
+            public int calcularAreaCuadrado(int ancho, int largo) {
+                return ancho * largo;
             }
         };
         Cuadrado cuadradoStandard = new Cuadrado(20, 40);
 
-        CalcularAreaCuadrado cuadrado1 = ((ancho1, largo1) -> new Cuadrado(ancho1, largo1));
+        // Párametros
+        // Implementación
+        CalcularAreaCuadrado cuadarado1 = (ancho, largo) ->  ancho * largo;
+
 
         Cuadrado cuadradoLambda = new Cuadrado(40, 80);
         System.out.println("El área del cuadrado standard es de: " + areaCuadrado(cuadradoStandard));

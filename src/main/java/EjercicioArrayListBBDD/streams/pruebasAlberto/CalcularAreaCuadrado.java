@@ -1,5 +1,6 @@
 package EjercicioArrayListBBDD.streams.pruebasAlberto;
 
+@FunctionalInterface
 public interface CalcularAreaCuadrado {
-    Cuadrado calcularAreaCuadrado (int ancho, int largo);
+    int calcularAreaCuadrado (int ancho, int largo);
 }

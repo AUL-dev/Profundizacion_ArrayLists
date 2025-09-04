@@ -14,20 +14,16 @@ public class Triangulo {
     public static void main(String[] args) {
         CalcularAreaTriangulo triangulo = new CalcularAreaTriangulo() {
             @Override
-            public Triangulo calcularAreaTriangulo(int base, int altura) {
-                Triangulo triangulo = new Triangulo();
-                triangulo.setBase(base);
-                triangulo.setAltura(altura);
-                return triangulo;
+            public int calcularAreaTriangulo(int base, int altura) {
+                return base * altura / 2;
             }
         };
-        Triangulo trianguloStandard = new Triangulo(20, 50);
 
-        CalcularAreaTriangulo triangulo1 = ((base1, altura1) -> new Triangulo(base1, altura1));
-        Triangulo trianguloLambda = new Triangulo(30, 90);
 
-        System.out.println("El área del triángulo standard es de: " + areaTriangulo(trianguloStandard));
-        System.out.println("El área del triángulo lambda es de: " + areaTriangulo(trianguloLambda));
+        CalcularAreaTriangulo triangulo1 = (base1, altura1) -> base1 * altura1 / 2;
+
+        System.out.println("El área del triángulo standard es de: " + triangulo.calcularAreaTriangulo(20,40));
+        System.out.println("El área del triángulo lambda es de: " + triangulo1.calcularAreaTriangulo(20, 40));
 
     }
 
