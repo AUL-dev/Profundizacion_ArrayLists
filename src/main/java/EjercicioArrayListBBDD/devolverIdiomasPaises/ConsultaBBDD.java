@@ -25,7 +25,7 @@ public class ConsultaBBDD {
         return array;
     }
 
-    public static void consultaYCreacionArrayCountry(Connection conexion) {
+    public static ArrayList<EntityCountry> consultaYCreacionArrayCountry(Connection conexion) {
         ArrayList<EntityCountry> array = new ArrayList<>();
         try {
             String sql = "SELECT * FROM COUNTRY";
@@ -47,9 +47,13 @@ public class ConsultaBBDD {
                 String gobernante = resultSet.getString("HeadOfState");
                 int capital = resultSet.getInt("Capital");
                 String codigo2 = resultSet.getString("Code2");
+                EntityCountry country = new EntityCountry(codigo, nombre, continente, region, area, anioIndependencia, poblacion, esperanzaVida, gnp, gnpOld, nombreLocal, gobierno, gobernante, capital, codigo2);
+                array.add(country);
             }
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return array;
     }
 }
