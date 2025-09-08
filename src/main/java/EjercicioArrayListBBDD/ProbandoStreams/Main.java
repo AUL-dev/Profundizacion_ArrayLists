@@ -16,7 +16,8 @@ public class Main {
 
         //arrayCodigoPais(entityCountryLanguages);
         //numeroVecesRepetidasPais(entityCountryLanguages);
-        mapearCountryCode(entityCountryLanguages);
+       // mapearCountryCode(entityCountryLanguages);
+        porcentajeMayor(entityCountryLanguages);
 
 
     }
@@ -64,6 +65,18 @@ public class Main {
         }
         System.out.println(countryTrue);
 
+    }
+
+    public static void porcentajeMayor(ArrayList<EntityCountryLanguage> entityCountryLanguages) {
+        Map<String, Float> mapearPorcentajePais = new HashMap<>();
+        for (EntityCountryLanguage recorrer : entityCountryLanguages) {
+            float porcentaje = recorrer.getPercentage();
+            String codigoPais = recorrer.getCountryCode();
+            if (porcentaje > 40) {
+                mapearPorcentajePais.put(codigoPais,porcentaje);
+            }
+        }
+        System.out.println(mapearPorcentajePais);
     }
 
     // Sacame los paises con un porcentaje mayor a 40 en un arraylist, y menor en otro.
