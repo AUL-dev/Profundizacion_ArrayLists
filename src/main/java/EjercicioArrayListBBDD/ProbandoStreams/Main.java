@@ -16,8 +16,9 @@ public class Main {
 
         //arrayCodigoPais(entityCountryLanguages);
         //numeroVecesRepetidasPais(entityCountryLanguages);
-       // mapearCountryCode(entityCountryLanguages);
-        porcentajeMayor(entityCountryLanguages);
+        // mapearCountryCode(entityCountryLanguages);
+        // porcentajeMayor(entityCountryLanguages);
+        porcentajeMenor(entityCountryLanguages);
 
 
     }
@@ -73,7 +74,19 @@ public class Main {
             float porcentaje = recorrer.getPercentage();
             String codigoPais = recorrer.getCountryCode();
             if (porcentaje > 40) {
-                mapearPorcentajePais.put(codigoPais,porcentaje);
+                mapearPorcentajePais.put(codigoPais, porcentaje);
+            }
+        }
+        System.out.println(mapearPorcentajePais);
+    }
+
+    public static void porcentajeMenor(ArrayList<EntityCountryLanguage> entityCountryLanguages) {
+        Map<String, Float> mapearPorcentajePais = new HashMap<>();
+        for (EntityCountryLanguage recorrer : entityCountryLanguages) {
+            float porcentaje = recorrer.getPercentage();
+            String codigoPais = recorrer.getCountryCode();
+            if (porcentaje < 40) {
+                mapearPorcentajePais.put(codigoPais, porcentaje);
             }
         }
         System.out.println(mapearPorcentajePais);
