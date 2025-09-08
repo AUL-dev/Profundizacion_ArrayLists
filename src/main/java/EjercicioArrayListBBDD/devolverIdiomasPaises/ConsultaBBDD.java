@@ -24,4 +24,32 @@ public class ConsultaBBDD {
         }
         return array;
     }
+
+    public static void consultaYCreacionArrayCountry(Connection conexion) {
+        ArrayList<EntityCountry> array = new ArrayList<>();
+        try {
+            String sql = "SELECT * FROM COUNTRY";
+            PreparedStatement preparedStatement = conexion.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String codigo = resultSet.getString("Code");
+                String nombre = resultSet.getString("Name");
+                String continente = resultSet.getString("Continent");
+                String region = resultSet.getString("Region");
+                float area = resultSet.getFloat("SurfaceArea");
+                int anioIndependencia = resultSet.getInt("IndepYear");
+                int poblacion = resultSet.getInt("Population");
+                float esperanzaVida = resultSet.getFloat("LifeExpectancy");
+                float gnp = resultSet.getFloat("GNP");
+                float gnpOld = resultSet.getFloat("GNPOld");
+                String nombreLocal = resultSet.getString("LocalName");
+                String gobierno = resultSet.getString("GovernmentForm");
+                String gobernante = resultSet.getString("HeadOfState");
+                int capital = resultSet.getInt("Capital");
+                String codigo2 = resultSet.getString("Code2");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

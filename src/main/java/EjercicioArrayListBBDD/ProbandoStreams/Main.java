@@ -68,6 +68,7 @@ public class Main {
 
     }
 
+    // Sacame los paises con un porcentaje mayor a 40 en un arraylist, y menor en otro.
     public static void porcentajeMayor(ArrayList<EntityCountryLanguage> entityCountryLanguages) {
         Map<String, Float> mapearPorcentajePais = new HashMap<>();
         for (EntityCountryLanguage recorrer : entityCountryLanguages) {
@@ -90,9 +91,10 @@ public class Main {
             }
         }
         System.out.println(mapearPorcentajePais);
+
     }
 
-    // Sacame los paises con un porcentaje mayor a 40 en un arraylist, y menor en otro.
+
 
     // Creame un arraylist nuevo con los paises (tabla country) que su año de indepencia sea mayor a 1985
     // y que la esperanza de vida sea menor a 75
