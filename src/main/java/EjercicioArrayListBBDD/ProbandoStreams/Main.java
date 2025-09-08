@@ -2,6 +2,7 @@ package EjercicioArrayListBBDD.ProbandoStreams;
 
 import EjercicioArrayListBBDD.devolverIdiomasPaises.ConexionMundo;
 import EjercicioArrayListBBDD.devolverIdiomasPaises.ConsultaBBDD;
+import EjercicioArrayListBBDD.devolverIdiomasPaises.EntityCountry;
 import EjercicioArrayListBBDD.devolverIdiomasPaises.EntityCountryLanguage;
 
 import java.sql.Connection;
@@ -13,13 +14,13 @@ public class Main {
     public static void main(String[] args) {
         Connection conexion = ConexionMundo.abrirConexion();
         ArrayList<EntityCountryLanguage> entityCountryLanguages = ConsultaBBDD.consultaYCreacionArrayList(conexion);
-
+        ArrayList<EntityCountry> entityCountries = ConsultaBBDD.consultaYCreacionArrayCountry(conexion);
         //arrayCodigoPais(entityCountryLanguages);
         //numeroVecesRepetidasPais(entityCountryLanguages);
         // mapearCountryCode(entityCountryLanguages);
         // porcentajeMayor(entityCountryLanguages);
-        porcentajeMenor(entityCountryLanguages);
-
+        // porcentajeMenor(entityCountryLanguages);
+        arrayPaisIndepenciaEsperanzaVida(entityCountries);
 
     }
 
@@ -94,6 +95,25 @@ public class Main {
 
     }
 
+    public static void arrayPaisIndepenciaEsperanzaVida(ArrayList<EntityCountry> country) {
+        ArrayList<String> array = new ArrayList<>();
+
+        for (EntityCountry recorrer : country) {
+            int anioIndependencia = recorrer.getAnioIndependencia();
+            float esperanzaVida = recorrer.getEsperanzaVida();
+            String nombre = recorrer.getNombre();
+            if (anioIndependencia > 1985 && esperanzaVida < 75) {
+                EntityCountry pais = new EntityCountry();
+                pais.setNombre(nombre);
+                pais.setAnioIndependencia(anioIndependencia);
+                pais.setEsperanzaVida(esperanzaVida);
+                array.add("Nombre: " + pais.getNombre() + ",año independencia: " + pais.getAnioIndependencia() + ",esperanza de vida: " + pais.getEsperanzaVida());
+            }
+        }
+        for (String s : array) {
+            System.out.println(s);
+        }
+    }
 
 
     // Creame un arraylist nuevo con los paises (tabla country) que su año de indepencia sea mayor a 1985
