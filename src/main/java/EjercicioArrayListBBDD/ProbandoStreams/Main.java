@@ -95,6 +95,8 @@ public class Main {
 
     }
 
+    // Creame un arraylist nuevo con los paises (tabla country) que su año de indepencia sea mayor a 1985
+    // y que la esperanza de vida sea menor a 75
     public static void arrayPaisIndepenciaEsperanzaVida(ArrayList<EntityCountry> country) {
         ArrayList<String> array = new ArrayList<>();
 
@@ -116,8 +118,7 @@ public class Main {
     }
 
 
-    // Creame un arraylist nuevo con los paises (tabla country) que su año de indepencia sea mayor a 1985
-    // y que la esperanza de vida sea menor a 75
+
 
     // Hazme un arraylist de las ciudades que tengan una población más de 150.000 y además, el nombre de la ciudad
     // contenga una k.
