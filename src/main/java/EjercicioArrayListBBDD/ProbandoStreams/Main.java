@@ -21,7 +21,7 @@ public class Main {
         // porcentajeMayor(entityCountryLanguages);
         // porcentajeMenor(entityCountryLanguages);
         arrayPaisIndepenciaEsperanzaVida(entityCountries);
-
+        //arrayCiudadesPoblacionLetra(entityCountries);
     }
 
     public static void arrayCodigoPais(ArrayList<EntityCountryLanguage> entityCountryLanguages) {
@@ -105,11 +105,7 @@ public class Main {
             float esperanzaVida = recorrer.getEsperanzaVida();
             String nombre = recorrer.getNombre();
             if (anioIndependencia > 1985 && esperanzaVida < 75) {
-                EntityCountry pais = new EntityCountry();
-                pais.setNombre(nombre);
-                pais.setAnioIndependencia(anioIndependencia);
-                pais.setEsperanzaVida(esperanzaVida);
-                array.add("Nombre: " + pais.getNombre() + ",año independencia: " + pais.getAnioIndependencia() + ",esperanza de vida: " + pais.getEsperanzaVida());
+                array.add("Nombre: " + nombre + ",año independencia: " + anioIndependencia + ",esperanza de vida: " + esperanzaVida);
             }
         }
         for (String s : array) {
@@ -117,10 +113,22 @@ public class Main {
         }
     }
 
-
-
-
     // Hazme un arraylist de las ciudades que tengan una población más de 150.000 y además, el nombre de la ciudad
     // contenga una k.
+    public static void arrayCiudadesPoblacionLetra(ArrayList<EntityCountry> country) {
+        ArrayList<String> ciudades = new ArrayList<>();
+        for (EntityCountry recorrer : country) {
+            String nombre = recorrer.getNombre();
+            int poblacion = recorrer.getPoblacion();
+            if (nombre.contains("k") && poblacion > 150000) {
+                ciudades.add("Nombre del país: " + nombre + ", número de población: " + poblacion);
+            }
+        }
+        for (String ciudad : ciudades) {
+            System.out.println(ciudad);
+        }
+    }
+
+
 }
 
