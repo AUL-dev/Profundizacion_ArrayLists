@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class pruebaStreams {
     public static void main(String[] args) {
@@ -11,11 +14,15 @@ public class pruebaStreams {
         paises.add("Alemania");
         paises.add("Bélgica");
 
-        paises.stream()
+        List<String> cll = paises.stream()
                 .distinct()
                 .sorted()
                 .skip(1)
-                .forEach(pais -> System.out.println("El país es: " + pais));
+                .filter(pais -> pais.length() > 6)
+                .collect(Collectors.toList());
+        System.out.println(cll);
+
+        // .forEach(pais -> System.out.println("El país es: " + pais));
 
     }
 }

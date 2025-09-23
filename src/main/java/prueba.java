@@ -2,7 +2,7 @@
 
 public class prueba {
     public static void main(String[] args) {
-        String[] array = new String[5];
+       String[] array = new String[5];
         int[] arrayNum = new int[10];
 
         array[0] = "Madrid";
