@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,6 +12,7 @@ public class pruebaStreams {
         paises.add("Estados Unidos");
         paises.add("Alemania");
         paises.add("Bélgica");
+
 
         List<String> cll = paises.stream()
                 .distinct()
