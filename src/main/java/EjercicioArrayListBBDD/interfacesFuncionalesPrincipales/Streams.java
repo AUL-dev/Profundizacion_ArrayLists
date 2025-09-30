@@ -34,6 +34,5 @@ public class Streams {
 
         // System.out.println("Qué cantidad de patatas hay: "+patatas1);
 
-
     }
 }
