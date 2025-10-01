@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConexionCiudad {
     public static Connection abrirConexion() {
-        String url = "jdbc:mysql://localhost:3306/city";
+        String url = "jdbc:mysql://localhost:3306/world";
         String usuario = "root";
         String passwd = "admin";
         Connection conexion = null;

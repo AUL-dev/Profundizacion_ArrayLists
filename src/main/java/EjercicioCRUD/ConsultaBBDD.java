@@ -14,11 +14,11 @@ public class ConsultaBBDD {
             PreparedStatement preparedStatement = conexion.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                int idCiudad = resultSet.getInt("Id_Ciudad");
-                String nombre = resultSet.getString("Nombre");
-                String codigoPais = resultSet.getString("Codigo_Pais");
-                String distrito = resultSet.getString("Distrito");
-                int poblacion = resultSet.getInt("Poblacion");
+                int idCiudad = resultSet.getInt("Id");
+                String nombre = resultSet.getString("Name");
+                String codigoPais = resultSet.getString("CountryCode");
+                String distrito = resultSet.getString("District");
+                int poblacion = resultSet.getInt("Population");
                 EntityCity entityCity = new EntityCity(idCiudad, nombre, codigoPais, distrito, poblacion);
                 datosCiudadades.add(entityCity);
             }
@@ -30,19 +30,30 @@ public class ConsultaBBDD {
 
     public static void leerTodos(ArrayList<EntityCity> datosCiudad) {
 
-            for (EntityCity entityCity : datosCiudad) {
-                int idCiudad = entityCity.getIdCiudad();
-                String nombre = entityCity.getNombre();
-                String codigoPais = entityCity.getCodigoPais();
-                String distrito = entityCity.getDistrito();
-                int poblacion = entityCity.getPoblacion();
-                System.out.println("El id de la ciudad es: " + idCiudad +
-                        "El nombre de la ciudad es: " + nombre + "El código del país es: "
-                        + codigoPais + "El distrito es: " + distrito
-                        + "La población es de : " + poblacion);
-            }
+        for (EntityCity entityCity : datosCiudad) {
+            int idCiudad = entityCity.getIdCiudad();
+            String nombre = entityCity.getNombre();
+            String codigoPais = entityCity.getCodigoPais();
+            String distrito = entityCity.getDistrito();
+            int poblacion = entityCity.getPoblacion();
+            System.out.println("El id de la ciudad es: " + idCiudad +
+                    " El nombre de la ciudad es: " + nombre + " El código del país es: "
+                    + codigoPais + " El distrito es: " + distrito
+                    + " La población es de : " + poblacion);
+        }
     }
-    public static void actualiza(ArrayList<EntityCity> datosCiudades) {
-        EntityCity entityCity = datosCiudades.get(1);
+
+    public static void actualiza(ArrayList<EntityCity> datosCiudad, int posicion, int idCiudad, String nombre, String codigoPais, String distrito, int poblacion) {
+        datosCiudad.get(posicion).setIdCiudad(idCiudad);
+        datosCiudad.get(posicion).setNombre(nombre);
+        datosCiudad.get(posicion).setCodigoPais(codigoPais);
+        datosCiudad.get(posicion).setDistrito(distrito);
+        datosCiudad.get(posicion).setPoblacion(poblacion);
+        leerTodos(datosCiudad);
+    }
+
+    public static void elimina(ArrayList<EntityCity> datosCiudades, int posicion) {
+        datosCiudades.remove(posicion);
+        leerTodos(datosCiudades);
     }
 }
